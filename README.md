@@ -5,7 +5,9 @@ react-state-animation provides a capability to update React component's state va
 This works with regular [React](http://facebook.github.io/react/) component and [React Canvas](https://github.com/Flipboard/react-canvas) 
 
 ## Installation
-`npm install react-state-animation --save`
+`npm install react-state-animation --save`  
+Include the module by CommonJS way  
+`import ReactStateAnimation from 'react-state-animation'` or `var ReactStateAnimation = require('react-state-animation');`
 
 ##Demo
 [http://tejitak.github.io/react-state-animation/examples/demo/](http://tejitak.github.io/react-state-animation/examples/demo/)
