@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     'demo': ['./examples/demo/app.js'],
     'canvas': ['./examples/demo/canvas.js'],
-    'fps': ['./examples/fps/app.js']
+    'fps': ['./examples/fps/app.js'],
+    'main': ['./src/ReactStateAnimation.js']
   },
 
   output: {
@@ -17,7 +18,8 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$|\.jsx$/, exclude: /node_modules|build/, loader: 'babel-loader?experimental&optional=runtime'}
+      // { test: /\.js$|\.jsx$/, exclude: /node_modules|build/, loader: 'babel-loader?experimental&optional=runtime'}
+      { test: /\.js$|\.jsx$/, exclude: /node_modules|build/, loader: 'babel-loader'}
     ]
   },
 

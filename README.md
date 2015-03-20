@@ -1,6 +1,6 @@
 # react-state-animation
 
-react-state-animation provides a capability to update React component's state value by requestAnimationFrame with a simple APIs.
+react-state-animation provides a capability to update React component's state value by requestAnimationFrame with a simple APIs. The file size is just **4KB** (minified).
 
 This works with regular [React](http://facebook.github.io/react/) component and [React Canvas](https://github.com/Flipboard/react-canvas) 
 
