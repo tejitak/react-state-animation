@@ -1,24 +1,23 @@
 import React from 'react'
 import ReactStateAnimation from 'react-state-animation'
 
-export default class Linear extends React.Component {
+export default class Demo extends React.Component {
     constructor(props) {
         super(props)
         // initialize state
         this.state = {
-            x: props.initialX
+            x: 0,
+            alpha: 1
         }
+        // this.x = 0
+        // this.alpha = 1
         // react state animation wrapper
         this._animate = new ReactStateAnimation(this)
     }
 
-    componentDidMount() {
-        // strat moving animation
-        this._animate.linear('x', 360, 1000)
-    }
-
-    componentWillUnmount() {
-        this.stop()
+    start() {
+        this._animate[this.props.easing]('x', 350/*end value*/, 1000/*duration(ms)*/)
+            .then(() => this._animate[this.props.easing]('alpha', 0, 500))
     }
 
     stop() {
@@ -28,8 +27,11 @@ export default class Linear extends React.Component {
     getStyle() {
         return {
             position: 'absolute',
-            backgroundColor: "red",
+            backgroundColor: "#009688",
             top: 0,
+            // opacity: this.alpha,
+            // left: this.x + "px",
+            opacity: this.state.alpha,
             left: this.state.x + "px",
             width: this.props.width,
             height: this.props.height
@@ -43,8 +45,8 @@ export default class Linear extends React.Component {
     }
 }
 
-Linear.defaultProps = {
-    initialX: 0,
-    width: 40,
-    height: 40
+Demo.defaultProps = {
+    width: 50,
+    height: 50,
+    easing: ''
 }

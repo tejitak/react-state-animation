@@ -1,6 +1,7 @@
 import React from 'react'
 import Demo from './Demo'
 import DemoCanvas from './DemoCanvas'
+import DemoCanvasNoState from './DemoCanvasNoState'
 
 var d = document,
     components = [],
@@ -12,19 +13,19 @@ easingTypes.forEach((easing, i) => {
         html = ['<h3>', easing, "</h3>",
                 "<code>reactStateAnimation." + easing + "('x', 350/*end value*/, 1000/*duration(ms)*/).then(() => reactStateAnimation." + easing + "('alpha', 0, 400))</code>",
                 '<div class="floatContainer">',
-                '<div class="floatLeftItem"><h4>React Component</h4><h4>React Canvas</h4></div>',
-                '<div class="floatRightItem"><div class="container"></div><div class="canvasContainer"></div></div>',
+                '<div class="floatLeftItem"><h4>Canvas w/ setState</h4><h4>Canvas w/o setState</h4></div>',
+                '<div class="floatRightItem"><div class="with"></div><div class="without"></div></div>',
                 '</div>']
     div.innerHTML = html.join("")
     // render React component
     components.push(React.render(
-        <Demo easing={easing} />,
-        div.querySelector('.container')
+        <DemoCanvas easing={easing} />,
+        div.querySelector('.with')
     ))
     // render React Canvas
     components.push(React.render(
-        <DemoCanvas easing={easing} />,
-        div.querySelector('.canvasContainer')
+        <DemoCanvasNoState easing={easing} />,
+        div.querySelector('.without')
     ))
     d.getElementById('demo').appendChild(div)
 })
@@ -32,9 +33,15 @@ easingTypes.forEach((easing, i) => {
 // action buttons
 d.getElementById('startBtn').addEventListener('click', () => {
     components.forEach(c => {
-        c.setState({x: 0, alpha: 1}, () => {
+        if(c.state.x) {
+            c.setState({x: 0, alpha: 1}, () => {
+                c.start()
+            })
+        }else{
+            c.x = 0
+            c.alpha = 1
             c.start()
-        })
+        }
     })
 })
 

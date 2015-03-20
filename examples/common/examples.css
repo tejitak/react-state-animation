@@ -1,6 +1,113 @@
+html, body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #101010;
+}
+
+h1, h2, h3 {
+    color: #333;
+    font-size: 33px;
+    font-weight: normal;
+}
+
+h2 {
+    display: none;
+    font-size: 33px;
+}
+
+h3 {
+    border-bottom: 3px solid #eee;
+    font-size: 18px;
+    padding: 5px 0;
+    margin: 20px 0 10px;
+    font-weight: bold;
+}
+
+h4 {
+    margin: 12px 0;
+}
+
+header {
+    background-color: #009688;
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(0,0,0,.3);
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #009688;
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(0,0,0,.3);
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: 12px;
+}
+
+section {
+    margin: 8px 0;
+}
+
 .wrap {
+    padding: 20px 50px;
+}
+
+.description {
+  text-align: center;
+  margin: 20px;
+}
+
+.social_container {
+    width: 300px;
+    margin: 4px auto;
+    text-align: center;
+}
+
+.social_container .social_item{
+    display: inline-block;
+    padding: 4px 20px
+}
+
+@media (min-width: 481px) {
+    .social_container {
+        width: 100%;
+    }
+}
+
+.separator {
+    margin: 30px 0px;
+    height: 3px;
+    background: #eaeaea;
+    border-radius: 2px;
+}
+
+.container {
     position: relative;
     width: 400px;
-    height: 200px;
-    background-color: #aaa;
+    height: 50px;
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+}
+
+.floatContainer {
+  height: 110px;
+  width: 540px;
+  margin-top: 10px;
+}
+
+.floatLeftItem {
+    float: left;
+    width: 90px;
+    height: 100px;
+    padding: 0px 20px 0 0;
+}
+
+.floatRightItem {
+    float: left;
+    width: 400px;
+    height: 100px;
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ReactStateAnimation Demo</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/examples/common/examples.css">
+    <script src="https://rawgithub.com/mrdoob/stats.js/master/src/Stats.js"></script></head>
+<body>
+    <header>react-state-animation</header>
+    <div class="wrap">
+        <section>
+            <h3>React Component</h3>
+            <div>
+                <div>Duration: <input type="text" id="durationDemoInput" value="1000" /></div>
+                <button id="startDemoBtn">Start</button>
+            </div>
+        </section>
+        <div id="demo" class="container"></div>
+        <hr/>
+        <section>
+            <h3>React Canvas</h3>
+            <div>
+                <div>Duration: <input type="text" id="durationDemoCanvasInput" value="1000"/></div>
+                <button id="startDemoCanvasBtn">Start</button>
+            </div>
+        </section>
+        <div id="demoCanvas"></div>
+    </div>
+    <script>
+        var stats = new Stats();
+        stats.domElement.style.position = "fixed";
+        stats.domElement.style.right    = "5px";
+        stats.domElement.style.top      = "5px";
+        document.body.appendChild(stats.domElement);
+    </script>
+    <script src="/build/fps.js"></script>
+</body>
+</html>

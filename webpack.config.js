@@ -4,7 +4,9 @@ module.exports = {
   watch: true,
 
   entry: {
-    'demo': ['./examples/demo/app.js']
+    'demo': ['./examples/demo/app.js'],
+    'canvas': ['./examples/demo/canvas.js'],
+    'fps': ['./examples/fps/app.js']
   },
 
   output: {

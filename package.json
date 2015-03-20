@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-bower": "./node_modules/.bin/browserify -s tweenState index.js > index-bower.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
   "type": "git",

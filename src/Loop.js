@@ -44,4 +44,5 @@ export default class Loop {
     timeDiff() {
         return Date.now() - this._startTime
     }
+    
 }
