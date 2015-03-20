@@ -1,0 +1,28 @@
+{
+  "name": "react-state-animation",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tejitak/react-state-animation",
+  "authors": [
+    "tejitak"
+  ],
+  "description": "Simple animations with React state",
+  "keywords": [
+    "react",
+    "animation",
+    "tween",
+    "transition",
+    "state",
+    "easing"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "examples",
+    "index.js",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
