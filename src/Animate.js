@@ -26,15 +26,18 @@ export default class Animate {
      * if the prop is not in state, set value to regular property with force update
      */
     _updateStateValue(prop, v) {
-        var c = this._component
-        if(c.state[prop] !== undefined){
-            var state = {}
-            state[prop] = v
-            c.setState(state)
-        }else{
-            c[prop] = v
-            c.forceUpdate()
-        }
+        return new Promise((resolve, reject) => {
+            var c = this._component
+            if(c.state[prop] !== undefined){
+                var state = {}
+                state[prop] = v
+                c.setState(state, resolve)
+            }else{
+                c[prop] = v
+                c.forceUpdate()
+                resolve()
+            }
+        })
     }
 
     _start(loopCallback) {
@@ -95,14 +98,13 @@ export default class Animate {
             value = begin + diff * operator
         this.onProcess(prop, value, progress)
         if(progress < 1) {
-            // set new react state
-            this._updateStateValue(prop, value)
-            // keep the loop
-            return true
+            // return promise to keep loop
+            return this._updateStateValue(prop, value)
         }else{
-            this._updateStateValue(prop, end)
-            this.stop()
-            resolve()
+            this._updateStateValue(prop, end).then(() => {
+                this.stop()
+                resolve()
+            })
             return false
         }
     }
