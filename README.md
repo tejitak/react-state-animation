@@ -7,7 +7,11 @@ This works with regular [React](http://facebook.github.io/react/) component and 
 ## Installation
 `npm install react-state-animation --save`  
 Include the module by CommonJS way  
-`import ReactStateAnimation from 'react-state-animation'` or `var ReactStateAnimation = require('react-state-animation');`
+`import ReactStateAnimation from 'react-state-animation'` or `var ReactStateAnimation = require('react-state-animation');`  
+
+
+Note that importing the module requires [babel](https://babeljs.io/). If you need ES5 version of this module, please run `npm install` and `gulp --production` in the installed directory to node_modules. The compiles javascript file will be located in build/main.js.  
+
 
 ##Demo
 [http://tejitak.github.io/react-state-animation/examples/demo/](http://tejitak.github.io/react-state-animation/examples/demo/)
