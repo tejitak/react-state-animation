@@ -1,8 +1,8 @@
 {
   "name": "react-state-animation",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple animations with React state",
-  "main": "index.js",
+  "main": "src/ReactStateAnimation.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
