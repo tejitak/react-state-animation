@@ -1,18 +1,19 @@
 {
   "name": "react-state-animation",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple animations with React state",
-  "main": "src/ReactStateAnimation.js",
+  "main": "lib/ReactStateAnimation.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-  "type": "git",
+    "type": "git",
     "url": "https://github.com/tejitak/react-state-animation.git"
   },
   "keywords": [
     "react",
+    "react-canvas",
     "animation",
     "tween",
     "transition",
@@ -25,25 +26,23 @@
     "url": "https://github.com/tejitak/react-state-animation/issues"
   },
   "homepage": "https://github.com/tejitak/react-state-animation",
-  "dependencies": {
-    "babel-runtime": "^4.7.5"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^0.13.0"
   },
   "devDependencies": {
-    "babel": "^4.7.5",
-    "babel-loader": "^4.1.0",
+    "babel": "^4.7.16",
     "del": "^1.1.1",
     "envify": "^3.2.0",
     "gulp": "^3.8.10",
+    "gulp-babel": "^4.0.0",
     "gulp-connect": "^2.2.0",
     "gulp-if": "^1.2.5",
     "gulp-uglify": "~1.0.2",
     "gulp-webpack": "^1.2.0",
     "react": "^0.13.0",
     "react-canvas": "0.0.1",
-    "webpack": "^1.5.3",
+    "webpack": "^1.7.3",
     "yargs": "^3.5.4"
   }
 }
