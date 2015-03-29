@@ -91,6 +91,9 @@ export default class Animate {
      *  - end is a goal value of the state
      */
     _anim(prop, begin, end, duration, easing, resolve) {
+        if(!this._loop){
+            return false
+        }
         var progress = Easing[easing](this._loop.timeDiff() / duration),
             distance = Math.abs(begin - end),
             diff = progress * distance,
