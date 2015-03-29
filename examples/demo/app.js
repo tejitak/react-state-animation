@@ -30,24 +30,29 @@ easingTypes.forEach((easing, i) => {
 })
 
 // action buttons
-d.getElementById('startBtn').addEventListener('click', () => {
+var start = () => {
     components.forEach(c => {
         c.setState({x: 0, alpha: 1}, () => {
             c.start()
         })
     })
-})
+}
 
-d.getElementById('resumeBtn').addEventListener('click', () => {
+var resume = () => {
     components.forEach(c => {
         c.start()
     })
-})
+}
 
-d.getElementById('stopBtn').addEventListener('click', () => {
+var stop = () => {
     components.forEach(c => {
         c.stop()
     })
-})
+}
 
-
+d.getElementById('startBtn1').addEventListener('click', start)
+d.getElementById('startBtn2').addEventListener('click', start)
+d.getElementById('resumeBtn1').addEventListener('click', resume)
+d.getElementById('resumeBtn2').addEventListener('click', resume)
+d.getElementById('stopBtn1').addEventListener('click', stop)
+d.getElementById('stopBtn2').addEventListener('click', stop)
