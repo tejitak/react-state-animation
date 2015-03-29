@@ -1,6 +1,6 @@
 {
   "name": "react-state-animation",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple animations with React state",
   "main": "lib/ReactStateAnimation.js",
   "scripts": {

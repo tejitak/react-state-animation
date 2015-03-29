@@ -92,6 +92,7 @@ export default class Animate {
      */
     _anim(prop, begin, end, duration, easing, resolve) {
         if(!this._loop){
+            resolve()
             return false
         }
         var progress = Easing[easing](this._loop.timeDiff() / duration),
@@ -104,8 +105,8 @@ export default class Animate {
             // return promise to keep loop
             return this._updateStateValue(prop, value)
         }else{
+            this.stop()
             this._updateStateValue(prop, end).then(() => {
-                this.stop()
                 resolve()
             })
             return false
