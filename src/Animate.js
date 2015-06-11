@@ -17,7 +17,7 @@ export default class Animate {
      */
     _getStateValue(prop) {
         var c = this._component,
-            v = c.state[prop]
+            v = c.state && c.state[prop]
         return v === undefined ? c[prop] : v
     }
 
@@ -28,7 +28,7 @@ export default class Animate {
     _updateStateValue(prop, v) {
         return new Promise((resolve, reject) => {
             var c = this._component
-            if(c.state[prop] !== undefined){
+            if(c.state && c.state[prop] !== undefined){
                 var state = {}
                 state[prop] = v
                 c.setState(state, resolve)
