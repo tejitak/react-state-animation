@@ -28,7 +28,7 @@
   "homepage": "https://github.com/tejitak/react-state-animation",
   "dependencies": {},
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": ">=0.13.x"
   },
   "devDependencies": {
     "babel": "^5.5.6",
