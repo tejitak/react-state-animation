@@ -1,6 +1,6 @@
 {
   "name": "react-state-animation",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple animations with React state",
   "main": "lib/ReactStateAnimation.js",
   "scripts": {
@@ -42,7 +42,6 @@
     "gulp-if": "^1.2.5",
     "gulp-uglify": "~1.0.2",
     "gulp-webpack": "^1.2.0",
-    "react": "^0.13.3",
     "react-canvas": "0.0.1",
     "webpack": "^1.7.3",
     "yargs": "^3.5.4"
