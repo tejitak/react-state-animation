@@ -58,7 +58,7 @@ var yourComponent = React.render(
 )
 var reactStateAnimation = new ReactStateAnimation(yourComponent)
 // your component's state 'x' will be updated to 350 with linear order in 1 sec, then alpha will be 0 on end of moving
-reactStateAnimation.linear('x', 350/*end value*/, 1000/*duration(ms)*/).then(() => reactStateAnimation.linear('alpha', 0, 400))
+reactStateAnimation.linearInOut('x', 350/*end value*/, 1000/*duration(ms)*/).then(() => reactStateAnimation.linearInOut('alpha', 0, 400))
 ```
 
 ### Example 2. Linear Move in React Component
@@ -79,7 +79,7 @@ export default class Demo extends React.Component {
 
     start() {
         // start animation
-        this._animate.linear('x', 350/*end value*/, 1000/*duration(ms)*/)
+        this._animate.linearInOut('x', 350/*end value*/, 1000/*duration(ms)*/)
     }
 
     stop() {
@@ -133,7 +133,7 @@ export default class DemoCanvas extends React.Component {
 
     start() {
         // start animation
-        this._animate.linear('x', 350/*end value*/, 1000/*duration*/)
+        this._animate.linearInOut('x', 350/*end value*/, 1000/*duration*/)
     }
 
     stop() {
