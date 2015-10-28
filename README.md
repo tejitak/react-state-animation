@@ -1,11 +1,14 @@
 # react-state-animation
 
-react-state-animation provides a capability to update React component's state value by requestAnimationFrame with a simple APIs that builds on d3-ease. The file size is just **4KB** (minified).
+[FORK]
+
+react-state-animation provides a capability to update React component's state value by building on d3 version 4. 
 
 This works with regular [React](http://facebook.github.io/react/) component and [React Canvas](https://github.com/Flipboard/react-canvas) 
 
 ## Installation
-`npm install react-state-animation --save`  
+`npm install https://github.com/petermoresi/react-state-animation.git --save`  
+
 Include the module by CommonJS way  
 `import ReactStateAnimation from 'react-state-animation'` or `var ReactStateAnimation = require('react-state-animation');`  
 
@@ -47,7 +50,7 @@ This will require ES5 modules converted by babel. ES6 sources are in /src and co
   - elasticOut(*stateProp*, *endStateValue*, *duration*)
   - elasticInOut(*stateProp*, *endStateValue*, *duration*)
 
-The above API returns Promise, so you can chain additinal processes by using then.
+All of these functions return a process that is resolved when the transition is complete.
 
 ##Usage
 ### Example 1. Use outside of component 
