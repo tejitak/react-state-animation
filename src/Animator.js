@@ -39,7 +39,7 @@ let eases = [
 * React state animation wrapper
 *  - update state value by requestAnimationFrame loop
 */
-export default class Animate {
+export default class Animator {
 
   /* Animation constructor accept data container and frames per second.
   */
