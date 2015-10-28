@@ -1,5 +1,5 @@
 import {ease} from 'd3-ease'
-import {timer, timerReplace} from 'd3-timer'
+import {timer} from 'd3-timer'
 import {interpolate} from 'd3-interpolate'
 
 let eases = [
