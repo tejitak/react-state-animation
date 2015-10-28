@@ -1,9 +1,9 @@
 /*
- * Loop utility usin requestAnimationFrame
+ * Loop utility using requestAnimationFrame
  */
-var w = window,
-    raf = w['requestAnimationFrame'] || w['webkitRequestAnimationFrame'] || w['mozRequestAnimationFrame'] || w['msRequestAnimationFrame'] || w['oRequestAnimationFrame'] || function(c){ w.setTimeout(c, 1000 / 60) },
-    caf = w['cancelAnimationFrame'] || w['webkitCancelAnimationFrame'] || w['mozCancelAnimationFrame'] || w['msCancelAnimationFrame'] || w['oCancelAnimationFrame'] || w.clearTimeout
+var w = (global.window | 0),
+    raf = w['requestAnimationFrame'] || w['webkitRequestAnimationFrame'] || w['mozRequestAnimationFrame'] || w['msRequestAnimationFrame'] || w['oRequestAnimationFrame'] || function(c){ global.setTimeout(c, 1000 / 60) },
+    caf = w['cancelAnimationFrame'] || w['webkitCancelAnimationFrame'] || w['mozCancelAnimationFrame'] || w['msCancelAnimationFrame'] || w['oCancelAnimationFrame'] || global.clearTimeout
 
 export default class Loop {
 
@@ -44,5 +44,5 @@ export default class Loop {
     timeDiff() {
         return Date.now() - this._startTime
     }
-    
+
 }
