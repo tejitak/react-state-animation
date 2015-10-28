@@ -1,6 +1,6 @@
 # react-state-animation
 
-react-state-animation provides a capability to update React component's state value by requestAnimationFrame with a simple APIs. The file size is just **4KB** (minified).
+react-state-animation provides a capability to update React component's state value by requestAnimationFrame with a simple APIs that builds on d3-ease. The file size is just **4KB** (minified).
 
 This works with regular [React](http://facebook.github.io/react/) component and [React Canvas](https://github.com/Flipboard/react-canvas) 
 
@@ -16,11 +16,36 @@ This will require ES5 modules converted by babel. ES6 sources are in /src and co
 
 ## API
 
-- linear(*stateProp*, *endStateValue*, *duration*)
-- easeInQuad(*stateProp*, *endStateValue*, *duration*)
-- easeInCubic(*stateProp*, *endStateValue*, *duration*)
-- easeOutCubic(*stateProp*, *endStateValue*, *duration*)
-- easeInOutCubic(*stateProp*, *endStateValue*, *duration*)
+    - linearIn(*stateProp*, *endStateValue*, *duration*)
+    - linearOut(*stateProp*, *endStateValue*, *duration*)
+    - linearInOut(*stateProp*, *endStateValue*, *duration*)
+    - quadIn(*stateProp*, *endStateValue*, *duration*)
+    - quadOut(*stateProp*, *endStateValue*, *duration*)
+    - quadInOut(*stateProp*, *endStateValue*, *duration*)
+    - cubicIn(*stateProp*, *endStateValue*, *duration*)
+    - cubicOut(*stateProp*, *endStateValue*, *duration*)
+    - cubicInOut(*stateProp*, *endStateValue*, *duration*)
+    - polyIn(*stateProp*, *endStateValue*, *duration*)
+    - polyOut(*stateProp*, *endStateValue*, *duration*)
+    - polyInOut(*stateProp*, *endStateValue*, *duration*)
+    - sinIn(*stateProp*, *endStateValue*, *duration*)
+    - sinOut(*stateProp*, *endStateValue*, *duration*)
+    - sinInOut(*stateProp*, *endStateValue*, *duration*)
+    - expIn(*stateProp*, *endStateValue*, *duration*)
+    - expOut(*stateProp*, *endStateValue*, *duration*)
+    - expInOut(*stateProp*, *endStateValue*, *duration*)
+    - circleIn(*stateProp*, *endStateValue*, *duration*)
+    - circleOut(*stateProp*, *endStateValue*, *duration*)
+    - circleInOut(*stateProp*, *endStateValue*, *duration*)
+    - bounceIn(*stateProp*, *endStateValue*, *duration*)
+    - bounceOut(*stateProp*, *endStateValue*, *duration*)
+    - bounceInOut(*stateProp*, *endStateValue*, *duration*)
+    - backIn(*stateProp*, *endStateValue*, *duration*)
+    - backOut(*stateProp*, *endStateValue*, *duration*)
+    - backInOut(*stateProp*, *endStateValue*, *duration*)
+    - elasticIn(*stateProp*, *endStateValue*, *duration*)
+    - elasticOut(*stateProp*, *endStateValue*, *duration*)
+    - elasticInOut(*stateProp*, *endStateValue*, *duration*)
 
 The above API returns Promise, so you can chain additinal processes by using then.
 
