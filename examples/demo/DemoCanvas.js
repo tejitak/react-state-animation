@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactCanvas from 'react-canvas'
-import ReactStateAnimation from 'react-state-animation'
+import {Animate} from 'react-state-animation'
 
 var Surface = ReactCanvas.Surface
 var Group = ReactCanvas.Group
@@ -15,7 +15,7 @@ export default class DemoCanvas extends React.Component {
             alpha: 1
         }
         // react state animation wrapper
-        this._animate = new ReactStateAnimation(this)
+        this._animate = new Animate(this)
     }
 
     start() {

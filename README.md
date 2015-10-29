@@ -62,6 +62,20 @@ This will require ES5 modules converted by babel. ES6 sources are in /src and co
 All of these functions return a process that is resolved when the transition is complete.
 
 ##Usage
+
+### Example 0. Extend AnimatedComponent
+
+```js:extend.js
+import {AnimatedComponent} from 'react-state-animation'
+
+class MyAnimatedComponent extends AnimatedComponent {
+  handleClick() {
+    // animate this.state.x over 2000ms with final value of 1000
+    this.setAnimated('linear-in', 'x', 1000, 2000)
+  }
+}
+```
+
 ### Example 1. Use outside of component
 
 ```js:app.js
