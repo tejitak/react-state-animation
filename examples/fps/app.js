@@ -1,7 +1,7 @@
 import React from 'react'
-import ReactStateAnimation from 'react-state-animation'
+import {Animate} from 'react-state-animation'
 import Demo from '../demo/Demo'
-import DemoCanvas from '../demo/DemoCanvas'
+//import DemoCanvas from '../demo/DemoCanvas'
 
 var d = document,
     demo = React.render(
@@ -27,6 +27,7 @@ d.getElementById('durationDemoInput').addEventListener('change', (e) => {
     demoDuration = e.target.value - 0
 })
 
+/*
 var demoCanvas = React.render(
         <DemoCanvas />,
         d.getElementById('demoCanvas')
@@ -40,12 +41,14 @@ animCanvas.onProcess = () => {
 
 d.getElementById('startDemoCanvasBtn').addEventListener('click', () => {
     demoCanvas.x = 0;
-    animCanvas.linear('x', 350/*end value*/, demoCanvasDuration)
+    animCanvas.linear('x', 350, demoCanvasDuration)
     // demoCanvas.setState({x: 0}, () => {
-        // animCanvas.linear('x', 350/*end value*/, demoCanvasDuration)
+        // animCanvas.linear('x', 350, demoCanvasDuration)
     // })
 })
+
 
 d.getElementById('durationDemoCanvasInput').addEventListener('change', (e) => {
     demoCanvasDuration = e.target.value - 0
 })
+*/
