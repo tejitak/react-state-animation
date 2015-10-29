@@ -1,7 +1,7 @@
 import Animate from './Animate'
-import Loop from './Loop'
+import AnimatedComponent from './AnimatedComponent'
 
-var ReactStateAnimation = Animate
-ReactStateAnimation.Loop = Loop
-
-export default ReactStateAnimation
+export default {
+  Animate,
+  AnimatedComponent
+}

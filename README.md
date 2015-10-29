@@ -1,17 +1,30 @@
 # react-state-animation
 
-react-state-animation provides a capability to update React component's state value by requestAnimationFrame with a simple APIs that builds on d3-ease. The file size is just **4KB** (minified).
+react-state-animation provides a Promise based API for mutating the value of a React component; built with
+D3's timer, ease and interpolation routines.
 
-This works with regular [React](http://facebook.github.io/react/) component and [React Canvas](https://github.com/Flipboard/react-canvas) 
+This works with [React](http://facebook.github.io/react/) v0.14.
+It is planned to work with [React Canvas](https://github.com/Flipboard/react-canvas) when it adds support for 0.14.
 
 ## Installation
-`npm install react-state-animation --save`  
+```
+npm install react-state-animation --save
+```
+
 Include the module by CommonJS way  
-`import ReactStateAnimation from 'react-state-animation'` or `var ReactStateAnimation = require('react-state-animation');`  
+
+```
+import {Animate, AnimatedComponent} from 'react-state-animation'
+```
+or
+```
+var ReactStateAnimation = require('react-state-animation').Animated;
+```  
 
 This will require ES5 modules converted by babel. ES6 sources are in /src and converted ES5 modules are located in /lib.
 
 ##Demo
+
 [http://tejitak.github.io/react-state-animation/examples/demo/](http://tejitak.github.io/react-state-animation/examples/demo/)
 
 ## API
@@ -47,10 +60,25 @@ This will require ES5 modules converted by babel. ES6 sources are in /src and co
   - elasticOut(*stateProp*, *endStateValue*, *duration*)
   - elasticInOut(*stateProp*, *endStateValue*, *duration*)
 
-The above API returns Promise, so you can chain additinal processes by using then.
+All of these functions return a process that is resolved when the transition is complete.
 
 ##Usage
-### Example 1. Use outside of component 
+
+### Example 0. Extend AnimatedComponent
+
+```js:extend.js
+import {AnimatedComponent} from 'react-state-animation'
+
+class MyAnimatedComponent extends AnimatedComponent {
+  handleClick() {
+    // animate this.state.x over 2000ms with final value of 1000
+    this.setAnimate('linear-in', 'x', 1000, 2000)
+  }
+}
+```
+
+### Example 1. Use outside of component
+
 ```js:app.js
 var yourComponent = React.render(
     <YourComponent />,
@@ -62,7 +90,9 @@ reactStateAnimation.linearInOut('x', 350/*end value*/, 1000/*duration(ms)*/).the
 ```
 
 ### Example 2. Linear Move in React Component
+
 Set any state (e.g. 'x') associated with position left style
+
 ```js:Demo.js
 import React from 'react'
 import ReactStateAnimation from 'react-state-animation'
@@ -111,7 +141,9 @@ Demo.defaultProps = {
 ```
 
 ### Example 3. Linear Move in React Canvas
+
 Set any state (e.g. 'x') associated with position left style
+
 ```js:DemoCanvas.js
 import React from 'react'
 import ReactCanvas from 'react-canvas'
@@ -182,7 +214,7 @@ DemoCanvas.defaultProps = {
 ```
 
 ## Note
-React setState is now asynchronously called as a batch. So, using regular instance properties instaed of state seems faste especially for React Canvas.
+React setState is now asynchronously called as a batch. So, using regular instance properties instead of state seems fast especially for React Canvas.
 
 Please check the [demo for canvas performance between React Canvas with setState (asynchronous and batch) and without setStates](http://tejitak.github.io/react-state-animation/examples/demo/canvas.html)
 
@@ -192,4 +224,3 @@ Please check the [demo for canvas performance between React Canvas with setState
 1. Run "npm install"
 2. Run "gulp"
 3. Access to "http://localhost:8080/html/"
-

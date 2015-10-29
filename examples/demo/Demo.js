@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactStateAnimation from 'react-state-animation'
+import {Animate} from 'react-state-animation'
 
 export default class Demo extends React.Component {
     constructor(props) {
@@ -12,7 +12,7 @@ export default class Demo extends React.Component {
         // this.x = 0
         // this.alpha = 1
         // react state animation wrapper
-        this._animate = new ReactStateAnimation(this)
+        this._animate = new Animate(this)
     }
 
     start() {

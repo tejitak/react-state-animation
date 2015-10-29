@@ -1,10 +1,10 @@
 import React from 'react'
 import Demo from './Demo'
-import DemoCanvas from './DemoCanvas'
+//import DemoCanvas from './DemoCanvas'
 
 var d = document,
     components = [],
-    easingTypes = ['linear', 'easeInQuad', 'easeInCubic', 'easeOutCubic', 'easeInOutCubic']
+    easingTypes = ['linearIn', 'quadIn', 'cubicIn', 'cubicOut', 'bounceIn']
 
 // set up DOM for each easing types
 easingTypes.forEach((easing, i) => {
@@ -12,7 +12,7 @@ easingTypes.forEach((easing, i) => {
         html = ['<h3>', easing, "</h3>",
                 "<code>reactStateAnimation." + easing + "('x', 350/*end value*/, 1000/*duration(ms)*/).then(() => reactStateAnimation." + easing + "('alpha', 0, 400))</code>",
                 '<div class="floatContainer">',
-                '<div class="floatLeftItem"><h4>React Component</h4><h4>React Canvas</h4></div>',
+                //'<div class="floatLeftItem"><h4>React Component</h4><h4>React Canvas</h4></div>',
                 '<div class="floatRightItem"><div class="container"></div><div class="canvasContainer"></div></div>',
                 '</div>']
     div.innerHTML = html.join("")
@@ -22,10 +22,10 @@ easingTypes.forEach((easing, i) => {
         div.querySelector('.container')
     ))
     // render React Canvas
-    components.push(React.render(
-        <DemoCanvas easing={easing} />,
-        div.querySelector('.canvasContainer')
-    ))
+    // components.push(React.render(
+    //     <DemoCanvas easing={easing} />,
+    //     div.querySelector('.canvasContainer')
+    // ))
     d.getElementById('demo').appendChild(div)
 })
 
