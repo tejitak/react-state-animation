@@ -72,7 +72,7 @@ import {AnimatedComponent} from 'react-state-animation'
 class MyAnimatedComponent extends AnimatedComponent {
   handleClick() {
     // animate this.state.x over 2000ms with final value of 1000
-    this.setAnimated('linear-in', 'x', 1000, 2000)
+    this.setAnimate('linear-in', 'x', 1000, 2000)
   }
 }
 ```
