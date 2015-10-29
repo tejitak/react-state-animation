@@ -48,6 +48,7 @@ export default class Animate {
     // keep internal reference to the component
     this._component = component;
     this._fps = fps;
+    this._setStopped = false;
 
     // generate an interface function for each ease.
     eases.forEach( (e) => {
@@ -88,6 +89,10 @@ export default class Animate {
     }
   }
 
+  stop() {
+    this._setStopped = true;
+  }
+
   animate(easing, prop, end, duration) {
 
     return new Promise((resolve, reject) => {
@@ -95,7 +100,11 @@ export default class Animate {
       i = interpolate(begin, end),
       easeFun = ease(easing)
 
+      /* The timer stops when the callback retuns a truthy value */
       timer( (elapsed,d) => {
+
+        if (this._setStopped) { return true; }
+
         var progress = easeFun( elapsed / duration ),
 
         value = i(progress)
