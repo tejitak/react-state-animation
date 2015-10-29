@@ -33,13 +33,13 @@ let eases = [
   'elastic-in',
   'elastic-out',
   'elastic-in-out'
-], Easing = {};
+];
 
 /**
 * React state animation wrapper
 *  - update state value by requestAnimationFrame loop
 */
-export default class Animator {
+export default class Animate {
 
   /* Animation constructor accept data container and frames per second.
   */
@@ -56,7 +56,7 @@ export default class Animator {
 
       // add instance methods dynamically
       this[easeName] = function(prop, end, duration) {
-        return this.animate(prop, end, duration, e)
+        return this.animate(e, prop, end, duration)
       }
 
     });
@@ -76,7 +76,7 @@ export default class Animator {
   * Set value to state
   * if the prop is not in state, set value to regular property with force update
   */
-  _updateStateValue(prop, v, resolve) {
+  _updateStateValue(prop, v) {
     var c = this._component
     if(c.state && c.state[prop] !== undefined){
       var state = {}
@@ -88,7 +88,7 @@ export default class Animator {
     }
   }
 
-  animate(prop, end, duration, easing) {
+  animate(easing, prop, end, duration) {
 
     return new Promise((resolve, reject) => {
       var begin = this._getStateValue(prop),
@@ -96,12 +96,13 @@ export default class Animator {
       easeFun = ease(easing)
 
       timer( (elapsed,d) => {
-        var progress = easeFun(elapsed / 1000),
+        var progress = easeFun( elapsed / duration ),
+
         value = i(progress)
 
         this._updateStateValue(prop, value, resolve)
 
-        if (elapsed > 1000) {
+        if (elapsed > duration) {
           this._updateStateValue(prop, end, resolve)
           resolve()
           return true;

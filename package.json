@@ -2,8 +2,8 @@
   "name": "react-state-animation",
   "version": "0.0.10",
   "description": "Simple animations with React state",
-  "main": "lib/Animator.js",
-  "jsnext:main": "src/Animator.js",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
