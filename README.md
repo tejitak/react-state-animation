@@ -3,7 +3,8 @@
 react-state-animation provides a Promise based API for mutating the value of a React component; built with
 D3's timer, ease and interpolation routines.
 
-This works with regular [React](http://facebook.github.io/react/) component and [React Canvas](https://github.com/Flipboard/react-canvas)
+This works with [React](http://facebook.github.io/react/) v0.14.
+It is planned to work with [React Canvas](https://github.com/Flipboard/react-canvas) when it adds support for 0.14.
 
 ## Installation
 ```
