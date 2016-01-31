@@ -1,16 +1,2 @@
 node_modules
-.idea/.name
-
-.idea/atlassian-ide-plugin.xml
-
-.idea/dictionaries/janosveres.xml
-
-.idea/encodings.xml
-
-.idea/jsLibraryMappings.xml
-
-*.xml
-
-.idea/thi.iml
-
-.idea/vcs.xml
+.idea
