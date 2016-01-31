@@ -181,6 +181,63 @@ DemoCanvas.defaultProps = {
 }
 ```
 
+### Example 4. Multiple states in ReactART
+Set any state (e.g. 'x') associated with position left style
+```js:DemoCanvas.js
+
+import React from 'react'
+import ReactART from 'react-art'
+import Circle from 'react-art/lib/Circle.art.js'
+import ReactStateAnimation from 'react-state-animation'
+
+var Surface = ReactCanvas.Surface
+
+export default class DemoCanvas extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            x: props.position.x,
+            y: props.position.y,
+            radius: props.radius 
+        }
+        // react state animation wrapper
+        this._animate = new ReactStateAnimation(this)
+    }
+    
+    _Floating() {
+        // pass an array to the manimate method with the states, to be animated
+        this._animate.manimate([
+            /* state: 'theNameOfTheState', target: endValue */
+            {state: 'x', target: this.props.position.x-15},
+            {state: 'radius', target: this.props.radius+4}
+        ], 800, 'elasticInOut')
+        .then(() => this._animate.manimate([
+            {state: 'x', target: this.props.position.x},
+            {state: 'radius', target: this.props.radius-2}
+        ], 800, 'elasticInOut'))
+        .then(() => this._Floating());
+    }
+    
+    render() {
+        return (
+            <Surface ref="surface" top={0} left={0} width={this.props.canvasWidth} height={this.props.canvasHeight}>
+               <Circle radius={this.state.radius} fill="#fca500" x={this.state.x} y={this.state.y}  />
+            </Surface>
+        )
+    }
+}
+
+DemoCanvas.defaultProps = {
+    canvasWidth: 400,
+    canvasHeight: 300,
+    radius: 30,
+    position: {
+        x: 50,
+        y: 50
+    }
+}
+```
+
 ## Note
 React setState is now asynchronously called as a batch. So, using regular instance properties instaed of state seems faste especially for React Canvas.
 
