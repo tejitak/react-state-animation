@@ -95,7 +95,7 @@ export default class Animate {
      */
     _updateStateMap(prop, values) {
 
-        return new Promise(function(resolve, reject) {
+        return new Promise((resolve, reject) => {
             var c = this._component,
                 state = {};
             // build up changed state
@@ -129,7 +129,7 @@ export default class Animate {
             console.log("Specified easing does not exist: " + easing);
             return;
         }
-        return new Promise(function(resolve, reject) {
+        return new Promise((resolve, reject) => {
             // gather array begin States
             var begins = [],
                 ends = [];
@@ -140,7 +140,7 @@ export default class Animate {
                 ends.push(e);
             }
             // start multi-anim
-            this._start(function() {
+            this._start(() => {
                 return this._multianim(prop, begins, ends, duration, easing, resolve);
             });
         });

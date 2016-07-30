@@ -1,7 +1,7 @@
 /*
  * Loop utility using requestAnimationFrame
  */
-var w = (global.window | 0),
+var w = (global.window || 0),
     raf = w['requestAnimationFrame'] || w['webkitRequestAnimationFrame'] || w['mozRequestAnimationFrame'] || w['msRequestAnimationFrame'] || w['oRequestAnimationFrame'] || function(c){ global.setTimeout(c, 1000 / 60) },
     caf = w['cancelAnimationFrame'] || w['webkitCancelAnimationFrame'] || w['mozCancelAnimationFrame'] || w['msCancelAnimationFrame'] || w['oCancelAnimationFrame'] || global.clearTimeout
 
